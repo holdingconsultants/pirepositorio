@@ -1,0 +1,59 @@
+/* =========================================================
+   AJUSTE GLOBAL POR NAVBAR FIJA (fixed-top)
+   - Cuando la navbar es fija, “tapa” el contenido.
+   - Este padding empuja toda la página hacia abajo.
+   ========================================================= */
+body {
+  padding-top: 90px; /* Si aún queda pegado, sube a 100px. Si sobra, baja a 80px. */
+}
+
+/* =========================================================
+   SERVICIOS (INDEX): Ajuste de imágenes verticales en cards
+   - Fuerza una altura uniforme
+   - Recorta sin deformar
+   ========================================================= */
+#servicios .card-img-top {
+  width: 100%;
+  height: 180px;          /* altura fija para que todas las cards queden parejas */
+  object-fit: cover;      /* recorta sin deformar */
+  object-position: top;   /* recorta desde arriba (mejor para imágenes verticales) */
+}
+
+/* =========================================================
+   SERVICIOS (INDEX): Estilo general de las cards + Hover
+   - Borde suave
+   - Evita que el zoom se salga
+   - Transición y elevación al pasar el mouse
+   ========================================================= */
+#servicios .card {
+  border: 0;
+  border-radius: 12px;
+  overflow: hidden; /* importante si hay zoom en imagen */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#servicios .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   SERVICIOS (INDEX): (Opcional) pequeño zoom en la imagen al hover
+   - Se activa cuando pasas el mouse sobre la card
+   ========================================================= */
+#servicios .card-img-top {
+  transition: transform 0.25s ease;
+}
+
+#servicios .card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   ESPACIO EXTRA SOLO PARA PÁGINAS INTERNAS (OPCIONAL)
+   - Útil si quieres que el título “respire” un poco más
+   - Ejemplo: en servicios.html pon: <section class="py-5 page-top">
+   ========================================================= */
+.page-top {
+  padding-top: 40px; /* ajusta 30–60px según cómo lo veas */
+}

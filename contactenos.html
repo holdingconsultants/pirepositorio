@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contáctenos - Compañeros PI">
+  <title>Contáctenos | Compañeros PI</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================================
+       NAVBAR fija (misma en todo el sitio)
+       ========================================================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Compañeros PI</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contactenos.html">Contáctenos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- =========================================================
+         ENCABEZADO DE CONTACTO
+         ========================================================= -->
+    <section class="py-5 page-top">
+      <div class="container text-center">
+        <h1 class="fw-bold">Contáctenos</h1>
+        <p class="text-muted">
+          ¿Tienes alguna pregunta o quieres más información?
+          Escríbenos y nos pondremos en contacto contigo.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FORMULARIO + DATOS DE CONTACTO
+         ========================================================= -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-5">
+
+          <!-- ================= FORMULARIO ================= -->
+          <div class="col-md-6">
+            <h4 class="fw-bold mb-3">Formulario de contacto</h4>
+
+            <!-- Nota: este formulario es solo visual (no envía datos aún) -->
+            <form>
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+              </div>
+
+              <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="correo" placeholder="correo@ejemplo.com">
+              </div>
+
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                Enviar mensaje
+              </button>
+            </form>
+          </div>
+
+          <!-- ================= DATOS DE CONTACTO ================= -->
+          <div class="col-md-6">
+            <h4 class="fw-bold mb-3">Información de contacto</h4>
+
+            <p class="mb-2">📞 <strong>Teléfono:</strong> +54 601 6754738</p>
+            <p class="mb-2">✉ <strong>Correo:</strong> software@pi.edu.co</p>
+            <p class="mb-4">📍 <strong>Dirección:</strong> Carrera 47 # 127 D 03</p>
+
+            <p class="text-muted">
+              Nuestro equipo está disponible para atender solicitudes relacionadas con
+              el desarrollo de proyectos web y procesos académicos.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container text-center">
+      <small>© 2025 Compañeros PI – Todos los derechos reservados</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

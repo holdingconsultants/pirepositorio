@@ -1,80 +1,235 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compañeros PI - Conectamos procesos con tecnología">
-    <title>Proyecto Programación Web</title>
-    <!-- Instalación de Bootstrap a través de CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+  <!-- ===== Configuración base del documento ===== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compañeros PI - Conectamos procesos con tecnología">
+
+  <title>Compañeros PI</title>
+
+  <!-- ===== Bootstrap CSS (CDN) =====
+       Bootstrap nos da:
+       - Sistema de grillas (container, row, col)
+       - Componentes listos (navbar, cards, botones)
+       - Utilidades (márgenes, padding, colores, tipografía)
+  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ===== CSS propio =====
+       Aquí ponemos ajustes como:
+       - Tamaño/recorte de imágenes en servicios
+       - Hover de las cards
+  -->
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Barra de navegacion Oscura -->
-  <div class="container">
-    <!-- Marca / logo textual -->
-    <a class="navbar-brand fw-bold" href="#"> <!-- en pantallas grandes se expande; en pequeñas se colapsa. -->
-      Compañeros PI
-    </a>
 
-    <!-- Botón hamburguesa (aparece en pantallas pequeñas) -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
-      aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-     <!--ARIA. Es el “nombre” del botón para lectores de pantalla. -->
+  <!-- =========================================================
+       NAVBAR (Barra superior)
+       - navbar-expand-lg: menú completo en pantallas grandes
+       - en pantallas pequeñas se colapsa (hamburguesa)
+       ========================================================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
 
-    <!-- Contenido colapsable del menú -->
-    <div class="collapse navbar-collapse" id="menuPrincipal">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="#inicio">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#servicios">Servicios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#aprendizaje">Aprendizaje</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contacto">Contacto</a>
-        </li>
-      </ul>
+      <!-- Marca del sitio (link al inicio) -->
+      <a class="navbar-brand fw-bold" href="index.html">Compañeros PI</a>
+
+      <!-- Botón hamburguesa:
+           - data-bs-toggle="collapse": activa el colapsado
+           - data-bs-target="#menuPrincipal": abre/cierra el div con id="menuPrincipal"
+      -->
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+              aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú colapsable (debe tener el id que usa el botón) -->
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+          <!-- ms-auto: empuja el menú hacia la derecha -->
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+
+          <!-- En index.html usamos ancla para bajar a la sección de servicios -->
+          <li class="nav-item">
+            <a class="nav-link" href="servicios.html">Servicios</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contactenos.html">Contáctenos</a>
+          </li>
+        </ul>
+      </div>
+
     </div>
-  </div>
-</nav>
+  </nav>
 
-    <header>
-        <h1 class="text-primary">Bienvenido a mi página</h1>
-        <p>Este documento está escrito en español y sigue la estructura básica de HTML5.</p>
-    </header>
+  <!-- =========================================================
+       MAIN (Contenido principal)
+       ========================================================= -->
+  <main>
 
-    <main>
-        <section>
-            <h2>Contenido principal</h2>
-                <p>Aquí puedes colocar la información más importante de tu proyecto.</p>
-        </section>
+    <!-- ===== HERO (Sección principal) =====
+         Presenta:
+         - Nombre
+         - Slogan
+         - Descripción breve
+         - Botones de acción
+    -->
+    <section id="inicio" class="py-5">
+      <div class="container">
+        <div class="row align-items-center g-4">
 
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#demo">
-  Probar Bootstrap JS
-        </button>
+          <!-- Columna de texto -->
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold">Compañeros PI</h1>
+            <p class="lead mb-4">Conectamos procesos con tecnología</p>
 
-        <div class="collapse mt-3" id="demo">
-         <div class="card card-body">
-          Si esto aparece y desaparece, Bootstrap JS está funcionando ✅
+            <p class="mb-4">
+              Somos estudiantes del Politécnico Internacional en formación.
+              Creamos soluciones web mientras aprendemos y mejoramos en cada paso.
+            </p>
+
+            <!-- Botones:
+                 - “Ver servicios” baja a la sección #servicios
+                 - “Contáctenos” abre contactenos.html
+            -->
+            <a href="#servicios" class="btn btn-primary btn-lg">Ver servicios</a>
+            <a href="contactenos.html" class="btn btn-outline-secondary btn-lg ms-2">Contáctenos</a>
+          </div>
+
+          <!-- Columna de imagen (multimedia) -->
+          <div class="col-lg-6 text-center">
+            <!-- img-fluid: responsive / rounded: bordes suaves -->
+            <img src="img/Horizontal2.jpg" class="img-fluid rounded" alt="Equipo desarrollando software">
+          </div>
+
         </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SERVICIOS (Resumen en cards)
+         Nota: Aquí mostramos el resumen (3 servicios).
+         En servicios.html puedes mostrar el detalle en vertical alternado.
+         ========================================================= -->
+    <section id="servicios" class="py-5 bg-light">
+      <div class="container">
+
+        <!-- Título centrado -->
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">Nuestros Servicios</h2>
+          <p class="text-muted">
+            Soluciones desarrolladas como parte de nuestro proceso de aprendizaje y formación.
+          </p>
         </div>
 
+        <!-- Grilla de 3 columnas (responsive):
+             - col-12: 1 columna en móvil
+             - col-md-6: 2 columnas en pantallas medianas
+             - col-lg-4: 3 columnas en pantallas grandes
+        -->
+        <div class="row g-4">
 
+          <!-- Servicio 1 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <img src="img/Vertrical1.jpg" class="card-img-top" alt="Desarrollo web básico">
+              <div class="card-body">
+                <h5 class="card-title">Desarrollo Web Básico</h5>
+                <p class="card-text">
+                  Creación de páginas web informativas utilizando HTML, CSS y Bootstrap,
+                  con diseño responsivo y estructura clara.
+                </p>
 
-    </main>
+                <!-- Botón para ver detalle (opcional): lleva a la página de servicios -->
+                <a href="servicios.html" class="btn btn-sm btn-outline-primary">Ver detalle</a>
+              </div>
+            </div>
+          </div>
 
-    <footer>
-        <small>&copy; 2025 Mi Proyecto. Todos los derechos reservados.</small>
-    </footer>
+          <!-- Servicio 2 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <img src="img/Vertical2.jpg" class="card-img-top" alt="Automatización de procesos">
+              <div class="card-body">
+                <h5 class="card-title">Automatización Básica de Procesos</h5>
+                <p class="card-text">
+                  Diseño de formularios y flujos simples que permiten organizar información
+                  y apoyar procesos básicos mediante soluciones web.
+                </p>
+                <a href="servicios.html" class="btn btn-sm btn-outline-primary">Ver detalle</a>
+              </div>
+            </div>
+          </div>
 
-    <!-- JS Bootstrap CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+          <!-- Servicio 3 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <img src="img/Veretical3.jpg" class="card-img-top" alt="Aprendizaje continuo">
+              <div class="card-body">
+                <h5 class="card-title">Aprendizaje Continuo en Desarrollo</h5>
+                <p class="card-text">
+                  Desarrollo de proyectos web como parte del proceso de formación,
+                  fortaleciendo habilidades técnicas y trabajo colaborativo.
+                </p>
+                <a href="servicios.html" class="btn btn-sm btn-outline-primary">Ver detalle</a>
+              </div>
+            </div>
+          </div>
 
+        </div>
+
+        <!-- CTA final (opcional): llamada a acción debajo de las cards -->
+        <div class="text-center mt-4">
+          <a href="contactenos.html" class="btn btn-primary">Contáctenos</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER (Pie de página)
+       ========================================================= -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Compañeros PI</h5>
+          <p class="mb-0">Conectamos procesos con tecnología.</p>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <h6 class="fw-bold">Contacto</h6>
+          <p class="mb-1">📞 +54 601 6754738</p>
+          <p class="mb-1">✉ software@pi.edu.co</p>
+          <p class="mb-0">📍 Carrera 47 # 127 D 03</p>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <h6 class="fw-bold">Proyecto Académico</h6>
+          <p class="mb-0">Desarrollo web – Politécnico Internacional</p>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary">
+
+      <div class="text-center">
+        <small>© 2025 Compañeros PI – Todos los derechos reservados</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS bundle: necesario para el menú hamburguesa (collapse) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
